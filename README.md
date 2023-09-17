@@ -37,6 +37,17 @@ to verify the push branch go back to github and check the main tab:
 
 <img width="1235" alt="CheckMainBranch" src="https://github.com/DavidTausend/terraform-beginner-bootcamp-2023/assets/125006062/e867007b-c17e-4142-9ab0-359bdc56ae82">
 
+Use the following command to push the tag:
+
+```git
+git tag 0.1.0
+```
+
+Check the pushed tags with the following command:
+
+```git
+git push --tags
+```
 
 ## Semantic Versioning
 
