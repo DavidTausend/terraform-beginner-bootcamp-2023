@@ -35,6 +35,10 @@ once above steps are done, push the branch by just hitting enter:
 
 to verify the push branch go back to github and check the main tab:
 
+<img width="1235" alt="CheckMainBranch" src="https://github.com/DavidTausend/terraform-beginner-bootcamp-2023/assets/125006062/e867007b-c17e-4142-9ab0-359bdc56ae82">
+
+
+
 
 sources:
-- https://semver.org/lang/de/
+- https://semver.org
