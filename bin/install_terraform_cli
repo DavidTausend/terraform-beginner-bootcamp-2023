@@ -3,6 +3,9 @@
 # Move to workspace directory
 cd /workspace/
 
+# Install nala
+sudo apt install nala
+
 # Update and install prerequisites
 sudo nala update
 sudo nala install -y gnupg software-properties-common
