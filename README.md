@@ -29,6 +29,11 @@ Copy the printed command of the consolo and allow the browser to past it:
 
 <img width="922" alt="Bildschirmfoto 2023-09-17 um 07 52 22" src="https://github.com/DavidTausend/terraform-beginner-bootcamp-2023/assets/125006062/cd7a1da4-2e25-420d-8043-64de4e37579d">
 
+once above steps are done, push the branch by just hitting enter:
+
+<img width="926" alt="Bildschirmfoto 2023-09-17 um 07 59 27" src="https://github.com/DavidTausend/terraform-beginner-bootcamp-2023/assets/125006062/106fd924-5250-4884-a087-27274e5bf83a">
+
+to verify the push branch go back to github and check the branches tab:
 
 
 sources:
