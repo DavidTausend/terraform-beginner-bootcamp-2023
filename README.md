@@ -2,6 +2,10 @@
 
 Create a new branch
 
+First create an issue on Github:
+
+
+
 ```git
 git checkout -b 
 ```
