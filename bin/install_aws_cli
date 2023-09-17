@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# Move to workspace directory
+cd /workspace/
+
+# Remove aws cli if it is already installed
+rm -f '/workspace/awscliv2.zip'
+rm -rf '/workspace/aws'
+
+# Doewnload aws cli zip installer
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+
+# Unzip the aws cli installer
+unzip awscliv2.zip
+
+# Install aws cli
+sudo ./aws/install
+
+# Move to the main directory
+cd $PROJECT_ROOT
