@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Move to workspace directory
+cd /workspace/
+
 # Update and install prerequisites
 sudo nala update
 sudo nala install -y gnupg software-properties-common
@@ -24,3 +27,6 @@ sudo nala update
 
 # Install Terraform
 sudo nala install terraform
+
+# Move to main directory
+cd $PROJECT_ROOT
