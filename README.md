@@ -38,6 +38,20 @@ to verify the push branch go back to github and check the main tab:
 <img width="1235" alt="CheckMainBranch" src="https://github.com/DavidTausend/terraform-beginner-bootcamp-2023/assets/125006062/e867007b-c17e-4142-9ab0-359bdc56ae82">
 
 
+## Semantic Versioning
+
+This Project is going utilize semantic versioning for its tagging.
+[semver.org](https://semver.org)
+
+The general format: 
+
+**MAJOR.MINOR.PATCH**, eg. `1.0.1`
+
+- **MAJOR** version when you make incompatible API changes
+- **MINOR** version when you add functionality in a backward compatible manner
+- **PATCH** version when you make backward compatible bug fixes
+
+
 
 
 sources:
