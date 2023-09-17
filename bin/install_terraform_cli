@@ -4,7 +4,8 @@
 cd /workspace/
 
 # Install nala
-sudo apt install nala
+sudo apt install nala -y
+#yes Y | command-that-asks-for-input
 
 # Update and install prerequisites
 sudo nala update
@@ -29,7 +30,8 @@ sudo tee /etc/apt/sources.list.d/hashicorp.list
 sudo nala update
 
 # Install Terraform
-sudo nala install terraform
+sudo nala install terraform -y
+#yes Y | command-that-asks-for-input
 
 # Move to main directory
 cd $PROJECT_ROOT

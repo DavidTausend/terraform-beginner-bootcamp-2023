@@ -71,6 +71,15 @@ Example how to install nala:
 sudo apt install nala
 ```
 
+#### Script response for installation program
+
+While the installation from some programs ask for `Do you want to continue? [Y/n]` and pause the installation. Therefore, we added `-y` to the installation command to do an automatical flag yes.
+
+Example: 
+```sh
+sudo nala install terraform -y
+```
+
 #### Shebang 
 
 A Shebang (prounced Sha-bang) tells the bash script what program that will interpet the script. eg. `#!//bin/bash`
@@ -166,3 +175,27 @@ gp env HELLO='world'
 All future workspaces launched will set the env vars for all bash terminals opened in thoes workspaces.
 
 You can also set en vars in the ´.gitpod.yml´ but this can only contain non-senstive env vars.
+
+### AWS CLI Installation
+
+AWS CLI is installed for the project via the bash script `./bin/install_aws_cli`
+
+[Getting Started Install](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) [AWS CLI Env Vars](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html)
+
+We can check if our AWS credentials is configured correctly by running the following AWS CLI command:
+
+```sh
+aws sts get-caller-identity
+```
+
+If it is succesful you should see a json payload return that looks like this:
+
+```sh
+{
+    "UserId": "AIDATURQK35UC4TW6ENRV",
+    "Account": "777777777777",
+    "Arn": "arn:aws:iam::777777777777:user/terraform-beginner-bootcamp"
+}
+```
+
+We'll need to generate AWS CLI credits from IAM User in order to the user AWS CLI.
