@@ -1,16 +1,26 @@
 terraform {
   required_providers {
-    aws = {
-      source = "hashicorp/aws"
-      version = "5.17.0"
+    random = {
+      source = "hashicorp/random"
+      version = "3.5.1"
     }
   }
 }
 
-provider "aws" {
-  region = "eu-central-1"
+provider "random" {
+  # Configuration options
 }
 
+resource "random_string" "bucket_name" {
+  length   = 16
+  special  = false
+}
+
+output "random_bucket_name" {
+  value = random_string.bucket_name.result
+}
+
+/*
 # Create a iam user group
 resource "aws_iam_group" "group_admin" {
   name = "Admin"
@@ -33,3 +43,4 @@ resource "aws_iam_user" "terraform_user" {
     tag-key = "terraform-bootcamp"
   }
 }
+*/
