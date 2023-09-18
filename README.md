@@ -13,12 +13,15 @@ The general format:
 - **MINOR** version when you add functionality in a backward compatible manner
 - **PATCH** version when you make backward compatible bug fixes
 
+
 ## Install the Tarrform CLI
 
 ### Considerations with the Terraform CLI changes
+
 The Terraform CLI installation instructions have changed due to gpg keyring changes. So we needed refer to the latest install CLI instructions via Terraform Documentation and change the scripting for install.
 
 [Install Terrform CLI](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
+
 
 ### Considerations for Linux Distrubtion
 
@@ -44,6 +47,7 @@ PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-poli
 UBUNTU_CODENAME=jammy
 ```
 
+
 ### Refactoring into Bash Scripts
 
 while fixing the Terraform CLI gpg depreciation issues we notice that bash scripts steps were a considerable amount more code. So We decided to create a bash script to install the Terraform CLI.
@@ -53,6 +57,7 @@ This bash script is located here: [./bin/install_terraform_cli](./bin/install_te
 - This will keep the Gitpod Task File ([.gitpod.yml](.gitpod.yml)) tidy.
 - This allow us an easier to debug and execute manually Terraform CLI.
 - This will allow better portablity for other project that need to install Terraform CLI.
+
 
 #### Nala use instead apt
 
@@ -71,6 +76,7 @@ Example how to install nala:
 sudo apt install nala
 ```
 
+
 #### Script response for installation program
 
 While the installation from some programs ask for `Do you want to continue? [Y/n]` and pause the installation. Therefore, we added `-y` to the installation command to do an automatical flag yes.
@@ -79,6 +85,7 @@ Example:
 ```sh
 sudo nala install terraform -y
 ```
+
 
 #### Shebang 
 
@@ -91,6 +98,7 @@ ChatGPT recommended this format for bash: `#!/usr/bin/env bash`
 - Interpreter in the current environment.
 
 https://en.wikipedia.org/wiki/Shebang_(Unix)
+
 
 ### Execution Considerations
 
@@ -126,11 +134,13 @@ We need to be careful when using the Init because it will not rerun if we restar
 
 https://www.gitpod.io/docs/configure/workspaces/tasks
 
+
 ### Working Env Vars
 
 We can list out all Enviroment Variables (Env Vars) using the `env` command
 
 We can filter specific env vars using grep eg. `env | grep AWS_`
+
 
 #### Setting and Unsetting Env Vars
 
@@ -154,15 +164,18 @@ HELLO='world'
 echo $HELLO
 ´´´
 
+
 #### Printing Vars
 
 We can print an env var using echo eg. `echo $HELLO``
+
 
 #### Scoping of Env Vars
 
 When you open up new bash terminals in VSCode it will not be aware of env vars that you have set in another window.
 
 If you want to Env Vars to persist across all future bash terminals that are open you need to set env vars in your bash profile. eg. `.bash_profile`
+
 
 #### Persisting Env Vars in Gitpod
 
@@ -175,6 +188,7 @@ gp env HELLO='world'
 All future workspaces launched will set the env vars for all bash terminals opened in thoes workspaces.
 
 You can also set en vars in the ´.gitpod.yml´ but this can only contain non-senstive env vars.
+
 
 ### AWS CLI Installation
 
@@ -220,6 +234,7 @@ We can see a list of all the Terrform commands by simply typing `terraform`
 
 At the start of a new terraform project we will run `terraform init` to download the binaries for the terraform providers that we'll use in this project.
 
+
 #### Terraform Plan
 
 `terraform plan`
@@ -227,6 +242,7 @@ At the start of a new terraform project we will run `terraform init` to download
 This will generate out a changeset, about the state of our infrastructure and what will be changed.
 
 We can output this changeset ie. "plan" to be passed to an apply, but often you can just ignore outputting.
+
 
 #### Terraform Apply
 
@@ -236,13 +252,42 @@ This will run a plan and pass the changeset to be execute by terraform. Apply sh
 
 If we want to automatically approve an apply we can provide the auto approve flag eg. `terraform apply --auto-approve`
 
-### Terraform Lock Files
+
+#### Terraform Destroy
+
+`teraform destroy`
+This will destroy resources.
+
+You can alos use the auto approve flag to skip the approve prompt eg. `terraform apply --auto-approve`
+
+
+#### Terraform Validate
+
+The `terraform validate` command will verify whether a configuration is syntactically valid and internally consistent, regardless of any provided variables or existing state. 
+
+[Terraform validate](https://developer.hashicorp.com/terraform/cli/commands/validate)
+
+
+#### Teraform Fmt
+
+The `terraform fmt` command is used to rewrite Terraform configuration files to a canonical format and style.
+
+- Coding format.
+- Easy to read.
+- Best structured.
+
+
+[Format your terraform code](https://developer.hashicorp.com/terraform/cli/commands/fmt)
+
+
+#### Terraform Lock Files
 
 `.terraform.lock.hcl` contains the locked versioning for the providers or modulues that should be used with this project.
 
 The Terraform Lock File **should be committed** to your Version Control System (VSC) eg. Github
 
-### Terraform State Files
+
+##### Terraform State Files
 
 `.terraform.tfstate` contain information about the current state of your infrastructure.
 
@@ -253,6 +298,7 @@ This file can contain sensentive data.
 If you lose this file, you lose knowning the state of your infrastructure.
 
 `.terraform.tfstate.backup` is the previous state file state.
+
 
 ### Terraform Directory
 
