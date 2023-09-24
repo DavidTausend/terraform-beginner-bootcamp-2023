@@ -2,6 +2,8 @@
 
 ## Root Module Structure
 
+Our root module structure is as follows:
+
 ```
 PROJECT_ROOT
 |
