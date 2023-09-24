@@ -53,11 +53,13 @@ This is the default file to load in terraform variables in blunk
 
 [Terraform Variables Definitions](https://developer.hashicorp.com/terraform/language/values/variables#variable-definition-precedence)
 
+
 ### auto.tfvars
 
 This file can contain variable values that are automatically loaded by Terraform, without the need for explicitly specifying the -var-file flag. 
 
 [Terraform Variables files](https://developer.hashicorp.com/terraform/language/values/variables#variable-definition-precedence)
+
 
 ### order of terraform variables
 
@@ -79,6 +81,7 @@ If you lose your statefile, you most likley have to tear down all your cloud inf
 
 You can use terraform port but it won't for all cloud resources. You need check the terraform providers documentation for which resources support import.
 
+
 ### Fix Missing Resources with Terraform Import
 
 `terraform import aws_s3_bucket.bucket bucket-name`
@@ -86,8 +89,51 @@ You can use terraform port but it won't for all cloud resources. You need check 
 [Terraform Import](https://developer.hashicorp.com/terraform/cli/import)
 [AWS S3 Bucket Import](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket#import)
 
+
 ### Fix Manual Configuration
 
 If someone goes and delete or modifies cloud resource manually through ClickOps. 
 
 If we run Terraform plan is with attempt to put our infrstraucture back into the expected state fixing Configuration Drift
+
+## Fix using Terraform Refresh
+
+```sh
+terraform apply -refresh-only -auto-approve
+```
+
+## Terraform Modules
+
+### Terraform Module Structure
+
+It is recommend to place modules in a `modules` directory when locally developing modules but you can name it whatever you like.
+
+
+### Passing Input Variables
+
+We can pass input variables to our module.
+The module has to declare the terraform variables in its own variables.tf
+
+```tf
+module "terrahouse_aws" {
+  source = "./modules/terrahouse_aws"
+  user_uuid = var.user_uuid
+  bucket_name = var.bucket_name
+}
+```
+
+### Modules Sources
+
+Using the source we can import the module from various places eg:
+- locally
+- Github
+- Terraform Registry
+
+```tf
+module "terrahouse_aws" {
+  source = "./modules/terrahouse_aws"
+}
+```
+
+
+[Modules Sources](https://developer.hashicorp.com/terraform/language/modules/sources)
