@@ -48,7 +48,25 @@ The general format:
 - **PATCH** version when you make backward compatible bug fixes
 
 
+## Terraform Providers
+
+Terraform supports multiple providers.
+Depending on what type of infrastructure we want to launch, we have to use appropriate providers accordingly.
+
+[Terraform Providers](https://registry.terraform.io/browse/providers)
+
 ## Install the Tarrform CLI
+
+### Terraform supported Platforms
+
+Terraform works on multiple platforms, these includes:
+
+- Windows
+- macOS
+- Linux
+- FreeBSD
+- OpenBSD
+- Solaris
 
 ### Considerations with the Terraform CLI changes
 
@@ -336,6 +354,15 @@ If you lose this file, you lose knowning the state of your infrastructure.
 `.terraform.tfstate.backup` is the previous state file state.
 
 
+#### Terraform Sleep Mode
+
+While working with a big team and avoid deploying changing at the same time, terraform has a sleep mode recource that we can use:
+
+```tf
+resource "time_sleep" "wait_300_seconds" {
+}
+```
+
 ### Terraform Directory
 
 `.terraform` directory contains binaries of terraform providers.
@@ -368,5 +395,7 @@ Provide the following code (replace your token in the file):
   }
 }
 ```
+
+
 
 We have automated this workaround with the following bash script [bin/generate_tfrc_credentials](bin/generate_tfrc_credentials)
