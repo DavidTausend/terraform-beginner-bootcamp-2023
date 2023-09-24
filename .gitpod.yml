@@ -1,14 +1,15 @@
 tasks:
   - name: terraform
     before: |
-      source ./bin/bash_profile
+      source ./bin/set_tf_alias
       source ./bin/install_terraform_cli
       source ./bin/generate_tfrc_credentials
+      cp $PROJECT_ROOT/terraform.tfvars.example $PROJECT_ROOT/terraform.tfvars
   - name: aws-cli
     env:
       AWS_CLI_AUTO_PROMPT: on-partial
     before: |
-      source ./bin/bash_profile
+      source ./bin/set_tf_alias
       source ./bin/install_aws_cli
      
 vscode:
