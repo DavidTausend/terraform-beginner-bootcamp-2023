@@ -307,3 +307,15 @@ resource "aws_instance" "web" {
 }
 ```
 https://developer.hashicorp.com/terraform/language/resources/provisioners/remote-exec
+
+
+## Install a node.js http server
+
+http-server is a simple, zero-configuration command-line static HTTP server. It is powerful enough for production usage, but it's simple and hackable enough to be used for testing, local development and learning.
+
+```sh
+npm install --global http-server
+http-server
+```
+
+[http Server ](https://www.npmjs.com/package/http-server)
