@@ -334,6 +334,30 @@ The `terraform fmt` command is used to rewrite Terraform configuration files to 
 [Format your terraform code](https://developer.hashicorp.com/terraform/cli/commands/fmt)
 
 
+#### Terraform Resource Blocks
+
+Resource block describes one or more infrastructure objects and declares a resource of a given type ("aws_instance") with a given local name ("myec2").
+
+Resource type and Name together serve as an identifier for a given resource and so must be unique.
+
+Examples:
+
+- resource aws_instance
+- resource aws_alb
+- resource iam_user
+- resource digitalocean_droplet
+
+```
+resource "aws_instance" "web" {
+  ami           = "ami-a1b2c3d4"
+  instance_type = "t2.micro"
+}
+```
+
+Note: You can only use the resource that are supported by a specific provider.
+
+[Terraform resource blocks](https://developer.hashicorp.com/terraform/language/resources/syntax)
+
 #### Terraform Lock Files
 
 `.terraform.lock.hcl` contains the locked versioning for the providers or modulues that should be used with this project.
