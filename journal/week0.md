@@ -53,6 +53,9 @@ The general format:
 Terraform supports multiple providers.
 Depending on what type of infrastructure we want to launch, we have to use appropriate providers accordingly.
 
+<img width="1049" alt="TF_Providers" src="https://github.com/DavidTausend/terraform-beginner-bootcamp-2023/assets/125006062/faff34b1-f2e8-4156-bb4f-edb2fd535465">
+
+
 [Terraform Providers](https://registry.terraform.io/browse/providers)
 
 ## Install the Tarrform CLI
