@@ -307,3 +307,31 @@ resource "aws_instance" "web" {
 }
 ```
 https://developer.hashicorp.com/terraform/language/resources/provisioners/remote-exec
+
+
+## Install a node.js http server
+
+http-server is a simple, zero-configuration command-line static HTTP server. It is powerful enough for production usage, but it's simple and hackable enough to be used for testing, local development and learning.
+
+```sh
+npm install --global http-server
+http-server
+```
+
+<img width="679" alt="Bildschirmfoto 2023-09-25 um 19 59 47" src="https://github.com/DavidTausend/terraform-beginner-bootcamp-2023/assets/125006062/d13e5478-d72f-4757-a93a-0d6204741f20">
+
+
+[http Server ](https://www.npmjs.com/package/http-server)
+
+
+## For Each Expressions
+￼
+￼For each allows us to enumerate over complex data types
+￼
+￼```sh
+￼[for s in var.list : upper(s)]
+￼```
+￼
+￼This is mostly useful when you are creating multiples of a cloud resource and you want to reduce the amount of repetitive terraform code.
+
+[For Each Expressions](https://developer.hashicorp.com/terraform/language/expressions/for)
