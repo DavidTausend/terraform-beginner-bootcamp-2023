@@ -318,4 +318,7 @@ npm install --global http-server
 http-server
 ```
 
+<img width="679" alt="Bildschirmfoto 2023-09-25 um 19 59 47" src="https://github.com/DavidTausend/terraform-beginner-bootcamp-2023/assets/125006062/d13e5478-d72f-4757-a93a-0d6204741f20">
+
+
 [http Server ](https://www.npmjs.com/package/http-server)
