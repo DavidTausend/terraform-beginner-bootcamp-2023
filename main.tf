@@ -33,3 +33,14 @@ module "terrahouse_aws" {
   assets_path         = var.assets_path
 }
 */
+
+resource "terratown_home" "germany" {
+  name = "How survive in German"
+  description = <<DESCRIPTION
+Moving to Germany means getting the chance to live in one of the most organized 
+and progressive countries on Earth, where you can enjoy a high standard of living.
+DESCRIPTION
+  #domain_name = module.terrahouse_aws.cloudfront_url
+  domain_name = "3fdq3gz.cloudfront.net" //It is just a mock
+  town = "german-town"
+  content_version = 1
