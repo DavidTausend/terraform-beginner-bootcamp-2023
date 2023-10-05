@@ -18,7 +18,7 @@ terraform {
 }
 
 provider "terratowns" {
-  endpoint  = "http://localhost:4567"
+  endpoint  = "http://localhost:4567/api"
   user_uuid = "e328f4ab-b99f-421c-84c9-4ccea042c7d1"
   token     = "9b49b3fb-b8e9-483c-b703-97ba88eef8e0"
 }
@@ -34,7 +34,7 @@ module "terrahouse_aws" {
 }
 */
 
-resource "terratown_home" "germany" {
+resource "terratowns_home" "germany" {
   name = "How survive in German"
   description = <<DESCRIPTION
 Moving to Germany means getting the chance to live in one of the most organized 
@@ -44,3 +44,4 @@ DESCRIPTION
   domain_name = "3fdq3gz.cloudfront.net" //It is just a mock
   town = "german-town"
   content_version = 1
+}
