@@ -34,7 +34,7 @@ module "terrahouse_aws" {
 }
 */
 
-resource "terratowns_home" "germany" {
+resource "terratowns_home" "german_town" {
   name = "How survive in German"
   description = <<DESCRIPTION
 Moving to Germany means getting the chance to live in one of the most organized 
@@ -42,6 +42,6 @@ and progressive countries on Earth, where you can enjoy a high standard of livin
 DESCRIPTION
   #domain_name = module.terrahouse_aws.cloudfront_url
   domain_name = "3fdq3gz.cloudfront.net" //It is just a mock
-  town = "german-town"
+  town = "gamers-grotto"
   content_version = 1
 }
