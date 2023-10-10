@@ -5,7 +5,6 @@ terraform {
       version = "1.0.0"
     }
   }
-  /*
   cloud {
     organization = "DavidTausend"
 
@@ -13,8 +12,6 @@ terraform {
       name = "terra-house-1"
     }
   }
-  */
-
 }
 
 provider "terratowns" {
@@ -24,25 +21,42 @@ provider "terratowns" {
 }
 
 
-module "terrahouse_aws" {
-  source              = "./modules/terrahouse_aws"
-  user_uuid           = var.teacherseat_user_uuid
-  bucket_name         = var.bucket_name
-  index_html_filepath = var.index_html_filepath
-  error_html_filepath = var.error_html_filepath
-  content_version     = var.content_version
-  assets_path         = var.assets_path
+module "home_germany_hosting" {
+  source          = "./modules/terrahome_aws"
+  user_uuid       = var.teacherseat_user_uuid
+  public_path     = var.germany.public_path
+  content_version = var.germany.content_version
 }
 
 
 resource "terratowns_home" "german_town" {
-  name            = "How survive in German"
-  description     = <<DESCRIPTION
+  name        = "How survive in German"
+  description = <<DESCRIPTION
 Moving to Germany means getting the chance to live in one of the most organized 
 and progressive countries on Earth, where you can enjoy a high standard of living.
 DESCRIPTION
-  domain_name     = module.terrahouse_aws.cloudfront_url
+  domain_name = module.home_germany_hosting.domain_name
   #domain_name = "3fdq3gz.cloudfront.net"
   town            = "missingo"
-  content_version = 1
+  content_version = var.germany.content_version
+}
+
+
+module "home_payday_hosting" {
+  source          = "./modules/terrahome_aws"
+  user_uuid       = var.teacherseat_user_uuid
+  public_path     = var.payday.public_path
+  content_version = var.payday.content_version
+}
+
+resource "terratowns_home" "home_payday" {
+  name            = "Making your Payday Bar"
+  description     = <<DESCRIPTION
+Since I really like Payday candy bars but they cost so much to import
+into Canada, I decided I would see how I could my own Paydays bars,
+and if they are most cost effective.
+DESCRIPTION
+  domain_name     = module.home_payday_hosting.domain_name
+  town            = "missingo"
+  content_version = var.payday.content_version
 }

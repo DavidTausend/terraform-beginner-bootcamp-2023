@@ -20,25 +20,11 @@ variable "bucket_name" {
   }
 }
 */
-variable "index_html_filepath" {
-  description = "The file path for index.html"
+variable "public_path" {
+  description = "The file path for the public directory"
   type        = string
-
-  validation {
-    condition     = fileexists(var.index_html_filepath)
-    error_message = "The provided path for index.html does not exist."
-  }
 }
 
-variable "error_html_filepath" {
-  description = "The file path for error.html"
-  type        = string
-
-  validation {
-    condition     = fileexists(var.error_html_filepath)
-    error_message = "The provided path for error.html does not exist."
-  }
-}
 
 variable "content_version" {
   description = "The content version (positive integer starting at 1)"
@@ -47,9 +33,4 @@ variable "content_version" {
     condition     = can(regex("^[1-9][0-9]*$", var.content_version))
     error_message = "content_version must be a positive integer starting at 1."
   }
-}
-
-variable "assets_path" {
-  description = "Paht to assests folder"
-  type = string
 }
