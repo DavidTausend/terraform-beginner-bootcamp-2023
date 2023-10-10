@@ -1,0 +1,156 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] module.home_germany_hosting.aws_cloudfront_distribution.s3_distribution (expand)" [label = "module.home_germany_hosting.aws_cloudfront_distribution.s3_distribution", shape = "box"]
+		"[root] module.home_germany_hosting.aws_cloudfront_origin_access_control.default (expand)" [label = "module.home_germany_hosting.aws_cloudfront_origin_access_control.default", shape = "box"]
+		"[root] module.home_germany_hosting.aws_s3_bucket.website_bucket (expand)" [label = "module.home_germany_hosting.aws_s3_bucket.website_bucket", shape = "box"]
+		"[root] module.home_germany_hosting.aws_s3_bucket_policy.bucket_policy (expand)" [label = "module.home_germany_hosting.aws_s3_bucket_policy.bucket_policy", shape = "box"]
+		"[root] module.home_germany_hosting.aws_s3_bucket_website_configuration.website_configuration (expand)" [label = "module.home_germany_hosting.aws_s3_bucket_website_configuration.website_configuration", shape = "box"]
+		"[root] module.home_germany_hosting.aws_s3_object.error_html (expand)" [label = "module.home_germany_hosting.aws_s3_object.error_html", shape = "box"]
+		"[root] module.home_germany_hosting.aws_s3_object.index_html (expand)" [label = "module.home_germany_hosting.aws_s3_object.index_html", shape = "box"]
+		"[root] module.home_germany_hosting.aws_s3_object.upload_assets (expand)" [label = "module.home_germany_hosting.aws_s3_object.upload_assets", shape = "box"]
+		"[root] module.home_germany_hosting.data.aws_caller_identity.current (expand)" [label = "module.home_germany_hosting.data.aws_caller_identity.current", shape = "box"]
+		"[root] module.home_germany_hosting.terraform_data.content_version (expand)" [label = "module.home_germany_hosting.terraform_data.content_version", shape = "box"]
+		"[root] module.home_germany_hosting.terraform_data.invalidate_cache (expand)" [label = "module.home_germany_hosting.terraform_data.invalidate_cache", shape = "box"]
+		"[root] module.home_payday_hosting.aws_cloudfront_distribution.s3_distribution (expand)" [label = "module.home_payday_hosting.aws_cloudfront_distribution.s3_distribution", shape = "box"]
+		"[root] module.home_payday_hosting.aws_cloudfront_origin_access_control.default (expand)" [label = "module.home_payday_hosting.aws_cloudfront_origin_access_control.default", shape = "box"]
+		"[root] module.home_payday_hosting.aws_s3_bucket.website_bucket (expand)" [label = "module.home_payday_hosting.aws_s3_bucket.website_bucket", shape = "box"]
+		"[root] module.home_payday_hosting.aws_s3_bucket_policy.bucket_policy (expand)" [label = "module.home_payday_hosting.aws_s3_bucket_policy.bucket_policy", shape = "box"]
+		"[root] module.home_payday_hosting.aws_s3_bucket_website_configuration.website_configuration (expand)" [label = "module.home_payday_hosting.aws_s3_bucket_website_configuration.website_configuration", shape = "box"]
+		"[root] module.home_payday_hosting.aws_s3_object.error_html (expand)" [label = "module.home_payday_hosting.aws_s3_object.error_html", shape = "box"]
+		"[root] module.home_payday_hosting.aws_s3_object.index_html (expand)" [label = "module.home_payday_hosting.aws_s3_object.index_html", shape = "box"]
+		"[root] module.home_payday_hosting.aws_s3_object.upload_assets (expand)" [label = "module.home_payday_hosting.aws_s3_object.upload_assets", shape = "box"]
+		"[root] module.home_payday_hosting.data.aws_caller_identity.current (expand)" [label = "module.home_payday_hosting.data.aws_caller_identity.current", shape = "box"]
+		"[root] module.home_payday_hosting.terraform_data.content_version (expand)" [label = "module.home_payday_hosting.terraform_data.content_version", shape = "box"]
+		"[root] module.home_payday_hosting.terraform_data.invalidate_cache (expand)" [label = "module.home_payday_hosting.terraform_data.invalidate_cache", shape = "box"]
+		"[root] provider[\"local.providers/local/terratowns\"]" [label = "provider[\"local.providers/local/terratowns\"]", shape = "diamond"]
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" [label = "provider[\"registry.terraform.io/hashicorp/aws\"]", shape = "diamond"]
+		"[root] provider[\"registry.terraform.io/hashicorp/time\"]" [label = "provider[\"registry.terraform.io/hashicorp/time\"]", shape = "diamond"]
+		"[root] provider[\"terraform.io/builtin/terraform\"]" [label = "provider[\"terraform.io/builtin/terraform\"]", shape = "diamond"]
+		"[root] terratowns_home.german_town (expand)" [label = "terratowns_home.german_town", shape = "box"]
+		"[root] terratowns_home.home_payday (expand)" [label = "terratowns_home.home_payday", shape = "box"]
+		"[root] time_sleep.wait_30_seconds (expand)" [label = "time_sleep.wait_30_seconds", shape = "box"]
+		"[root] var.germany" [label = "var.germany", shape = "note"]
+		"[root] var.payday" [label = "var.payday", shape = "note"]
+		"[root] var.teacherseat_user_uuid" [label = "var.teacherseat_user_uuid", shape = "note"]
+		"[root] var.terratowns_access_token" [label = "var.terratowns_access_token", shape = "note"]
+		"[root] var.terratowns_endpoint" [label = "var.terratowns_endpoint", shape = "note"]
+		"[root] module.home_germany_hosting (close)" -> "[root] module.home_germany_hosting.aws_s3_bucket_policy.bucket_policy (expand)"
+		"[root] module.home_germany_hosting (close)" -> "[root] module.home_germany_hosting.aws_s3_object.error_html (expand)"
+		"[root] module.home_germany_hosting (close)" -> "[root] module.home_germany_hosting.aws_s3_object.index_html (expand)"
+		"[root] module.home_germany_hosting (close)" -> "[root] module.home_germany_hosting.aws_s3_object.upload_assets (expand)"
+		"[root] module.home_germany_hosting (close)" -> "[root] module.home_germany_hosting.output.bucket_name (expand)"
+		"[root] module.home_germany_hosting (close)" -> "[root] module.home_germany_hosting.output.domain_name (expand)"
+		"[root] module.home_germany_hosting (close)" -> "[root] module.home_germany_hosting.output.website_endpoint (expand)"
+		"[root] module.home_germany_hosting (close)" -> "[root] module.home_germany_hosting.terraform_data.invalidate_cache (expand)"
+		"[root] module.home_germany_hosting.aws_cloudfront_distribution.s3_distribution (expand)" -> "[root] module.home_germany_hosting.aws_cloudfront_origin_access_control.default (expand)"
+		"[root] module.home_germany_hosting.aws_cloudfront_distribution.s3_distribution (expand)" -> "[root] module.home_germany_hosting.local.s3_origin_id (expand)"
+		"[root] module.home_germany_hosting.aws_cloudfront_origin_access_control.default (expand)" -> "[root] module.home_germany_hosting.aws_s3_bucket.website_bucket (expand)"
+		"[root] module.home_germany_hosting.aws_s3_bucket.website_bucket (expand)" -> "[root] module.home_germany_hosting.var.user_uuid (expand)"
+		"[root] module.home_germany_hosting.aws_s3_bucket.website_bucket (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] module.home_germany_hosting.aws_s3_bucket_policy.bucket_policy (expand)" -> "[root] module.home_germany_hosting.aws_cloudfront_distribution.s3_distribution (expand)"
+		"[root] module.home_germany_hosting.aws_s3_bucket_policy.bucket_policy (expand)" -> "[root] module.home_germany_hosting.data.aws_caller_identity.current (expand)"
+		"[root] module.home_germany_hosting.aws_s3_bucket_website_configuration.website_configuration (expand)" -> "[root] module.home_germany_hosting.aws_s3_bucket.website_bucket (expand)"
+		"[root] module.home_germany_hosting.aws_s3_object.error_html (expand)" -> "[root] module.home_germany_hosting.aws_s3_bucket.website_bucket (expand)"
+		"[root] module.home_germany_hosting.aws_s3_object.error_html (expand)" -> "[root] module.home_germany_hosting.var.public_path (expand)"
+		"[root] module.home_germany_hosting.aws_s3_object.index_html (expand)" -> "[root] module.home_germany_hosting.aws_s3_bucket.website_bucket (expand)"
+		"[root] module.home_germany_hosting.aws_s3_object.index_html (expand)" -> "[root] module.home_germany_hosting.terraform_data.content_version (expand)"
+		"[root] module.home_germany_hosting.aws_s3_object.index_html (expand)" -> "[root] module.home_germany_hosting.var.public_path (expand)"
+		"[root] module.home_germany_hosting.aws_s3_object.upload_assets (expand)" -> "[root] module.home_germany_hosting.aws_s3_bucket.website_bucket (expand)"
+		"[root] module.home_germany_hosting.aws_s3_object.upload_assets (expand)" -> "[root] module.home_germany_hosting.var.public_path (expand)"
+		"[root] module.home_germany_hosting.data.aws_caller_identity.current (expand)" -> "[root] module.home_germany_hosting (expand)"
+		"[root] module.home_germany_hosting.data.aws_caller_identity.current (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] module.home_germany_hosting.local.s3_origin_id (expand)" -> "[root] module.home_germany_hosting (expand)"
+		"[root] module.home_germany_hosting.output.bucket_name (expand)" -> "[root] module.home_germany_hosting.aws_s3_bucket.website_bucket (expand)"
+		"[root] module.home_germany_hosting.output.domain_name (expand)" -> "[root] module.home_germany_hosting.aws_cloudfront_distribution.s3_distribution (expand)"
+		"[root] module.home_germany_hosting.output.website_endpoint (expand)" -> "[root] module.home_germany_hosting.aws_s3_bucket_website_configuration.website_configuration (expand)"
+		"[root] module.home_germany_hosting.terraform_data.content_version (expand)" -> "[root] module.home_germany_hosting.var.content_version (expand)"
+		"[root] module.home_germany_hosting.terraform_data.content_version (expand)" -> "[root] provider[\"terraform.io/builtin/terraform\"]"
+		"[root] module.home_germany_hosting.terraform_data.invalidate_cache (expand)" -> "[root] module.home_germany_hosting.aws_cloudfront_distribution.s3_distribution (expand)"
+		"[root] module.home_germany_hosting.terraform_data.invalidate_cache (expand)" -> "[root] module.home_germany_hosting.terraform_data.content_version (expand)"
+		"[root] module.home_germany_hosting.var.content_version (expand)" -> "[root] module.home_germany_hosting (expand)"
+		"[root] module.home_germany_hosting.var.content_version (expand)" -> "[root] var.germany"
+		"[root] module.home_germany_hosting.var.public_path (expand)" -> "[root] module.home_germany_hosting (expand)"
+		"[root] module.home_germany_hosting.var.public_path (expand)" -> "[root] var.germany"
+		"[root] module.home_germany_hosting.var.user_uuid (expand)" -> "[root] module.home_germany_hosting (expand)"
+		"[root] module.home_germany_hosting.var.user_uuid (expand)" -> "[root] var.teacherseat_user_uuid"
+		"[root] module.home_payday_hosting (close)" -> "[root] module.home_payday_hosting.aws_s3_bucket_policy.bucket_policy (expand)"
+		"[root] module.home_payday_hosting (close)" -> "[root] module.home_payday_hosting.aws_s3_object.error_html (expand)"
+		"[root] module.home_payday_hosting (close)" -> "[root] module.home_payday_hosting.aws_s3_object.index_html (expand)"
+		"[root] module.home_payday_hosting (close)" -> "[root] module.home_payday_hosting.aws_s3_object.upload_assets (expand)"
+		"[root] module.home_payday_hosting (close)" -> "[root] module.home_payday_hosting.output.bucket_name (expand)"
+		"[root] module.home_payday_hosting (close)" -> "[root] module.home_payday_hosting.output.domain_name (expand)"
+		"[root] module.home_payday_hosting (close)" -> "[root] module.home_payday_hosting.output.website_endpoint (expand)"
+		"[root] module.home_payday_hosting (close)" -> "[root] module.home_payday_hosting.terraform_data.invalidate_cache (expand)"
+		"[root] module.home_payday_hosting.aws_cloudfront_distribution.s3_distribution (expand)" -> "[root] module.home_payday_hosting.aws_cloudfront_origin_access_control.default (expand)"
+		"[root] module.home_payday_hosting.aws_cloudfront_distribution.s3_distribution (expand)" -> "[root] module.home_payday_hosting.local.s3_origin_id (expand)"
+		"[root] module.home_payday_hosting.aws_cloudfront_origin_access_control.default (expand)" -> "[root] module.home_payday_hosting.aws_s3_bucket.website_bucket (expand)"
+		"[root] module.home_payday_hosting.aws_s3_bucket.website_bucket (expand)" -> "[root] module.home_payday_hosting.var.user_uuid (expand)"
+		"[root] module.home_payday_hosting.aws_s3_bucket.website_bucket (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] module.home_payday_hosting.aws_s3_bucket_policy.bucket_policy (expand)" -> "[root] module.home_payday_hosting.aws_cloudfront_distribution.s3_distribution (expand)"
+		"[root] module.home_payday_hosting.aws_s3_bucket_policy.bucket_policy (expand)" -> "[root] module.home_payday_hosting.data.aws_caller_identity.current (expand)"
+		"[root] module.home_payday_hosting.aws_s3_bucket_website_configuration.website_configuration (expand)" -> "[root] module.home_payday_hosting.aws_s3_bucket.website_bucket (expand)"
+		"[root] module.home_payday_hosting.aws_s3_object.error_html (expand)" -> "[root] module.home_payday_hosting.aws_s3_bucket.website_bucket (expand)"
+		"[root] module.home_payday_hosting.aws_s3_object.error_html (expand)" -> "[root] module.home_payday_hosting.var.public_path (expand)"
+		"[root] module.home_payday_hosting.aws_s3_object.index_html (expand)" -> "[root] module.home_payday_hosting.aws_s3_bucket.website_bucket (expand)"
+		"[root] module.home_payday_hosting.aws_s3_object.index_html (expand)" -> "[root] module.home_payday_hosting.terraform_data.content_version (expand)"
+		"[root] module.home_payday_hosting.aws_s3_object.index_html (expand)" -> "[root] module.home_payday_hosting.var.public_path (expand)"
+		"[root] module.home_payday_hosting.aws_s3_object.upload_assets (expand)" -> "[root] module.home_payday_hosting.aws_s3_bucket.website_bucket (expand)"
+		"[root] module.home_payday_hosting.aws_s3_object.upload_assets (expand)" -> "[root] module.home_payday_hosting.var.public_path (expand)"
+		"[root] module.home_payday_hosting.data.aws_caller_identity.current (expand)" -> "[root] module.home_payday_hosting (expand)"
+		"[root] module.home_payday_hosting.data.aws_caller_identity.current (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] module.home_payday_hosting.local.s3_origin_id (expand)" -> "[root] module.home_payday_hosting (expand)"
+		"[root] module.home_payday_hosting.output.bucket_name (expand)" -> "[root] module.home_payday_hosting.aws_s3_bucket.website_bucket (expand)"
+		"[root] module.home_payday_hosting.output.domain_name (expand)" -> "[root] module.home_payday_hosting.aws_cloudfront_distribution.s3_distribution (expand)"
+		"[root] module.home_payday_hosting.output.website_endpoint (expand)" -> "[root] module.home_payday_hosting.aws_s3_bucket_website_configuration.website_configuration (expand)"
+		"[root] module.home_payday_hosting.terraform_data.content_version (expand)" -> "[root] module.home_payday_hosting.var.content_version (expand)"
+		"[root] module.home_payday_hosting.terraform_data.content_version (expand)" -> "[root] provider[\"terraform.io/builtin/terraform\"]"
+		"[root] module.home_payday_hosting.terraform_data.invalidate_cache (expand)" -> "[root] module.home_payday_hosting.aws_cloudfront_distribution.s3_distribution (expand)"
+		"[root] module.home_payday_hosting.terraform_data.invalidate_cache (expand)" -> "[root] module.home_payday_hosting.terraform_data.content_version (expand)"
+		"[root] module.home_payday_hosting.var.content_version (expand)" -> "[root] module.home_payday_hosting (expand)"
+		"[root] module.home_payday_hosting.var.content_version (expand)" -> "[root] var.payday"
+		"[root] module.home_payday_hosting.var.public_path (expand)" -> "[root] module.home_payday_hosting (expand)"
+		"[root] module.home_payday_hosting.var.public_path (expand)" -> "[root] var.payday"
+		"[root] module.home_payday_hosting.var.user_uuid (expand)" -> "[root] module.home_payday_hosting (expand)"
+		"[root] module.home_payday_hosting.var.user_uuid (expand)" -> "[root] var.teacherseat_user_uuid"
+		"[root] output.bucket_name (expand)" -> "[root] module.home_germany_hosting.output.bucket_name (expand)"
+		"[root] output.cloudfront_url (expand)" -> "[root] module.home_germany_hosting.output.domain_name (expand)"
+		"[root] output.s3_website_endpoint (expand)" -> "[root] module.home_germany_hosting.output.website_endpoint (expand)"
+		"[root] provider[\"local.providers/local/terratowns\"] (close)" -> "[root] terratowns_home.german_town (expand)"
+		"[root] provider[\"local.providers/local/terratowns\"] (close)" -> "[root] terratowns_home.home_payday (expand)"
+		"[root] provider[\"local.providers/local/terratowns\"]" -> "[root] var.teacherseat_user_uuid"
+		"[root] provider[\"local.providers/local/terratowns\"]" -> "[root] var.terratowns_access_token"
+		"[root] provider[\"local.providers/local/terratowns\"]" -> "[root] var.terratowns_endpoint"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.home_germany_hosting.aws_s3_bucket_policy.bucket_policy (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.home_germany_hosting.aws_s3_bucket_website_configuration.website_configuration (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.home_germany_hosting.aws_s3_object.error_html (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.home_germany_hosting.aws_s3_object.index_html (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.home_germany_hosting.aws_s3_object.upload_assets (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.home_payday_hosting.aws_s3_bucket_policy.bucket_policy (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.home_payday_hosting.aws_s3_bucket_website_configuration.website_configuration (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.home_payday_hosting.aws_s3_object.error_html (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.home_payday_hosting.aws_s3_object.index_html (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.home_payday_hosting.aws_s3_object.upload_assets (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/time\"] (close)" -> "[root] time_sleep.wait_30_seconds (expand)"
+		"[root] provider[\"terraform.io/builtin/terraform\"] (close)" -> "[root] module.home_germany_hosting.terraform_data.invalidate_cache (expand)"
+		"[root] provider[\"terraform.io/builtin/terraform\"] (close)" -> "[root] module.home_payday_hosting.terraform_data.invalidate_cache (expand)"
+		"[root] root" -> "[root] module.home_germany_hosting (close)"
+		"[root] root" -> "[root] module.home_payday_hosting (close)"
+		"[root] root" -> "[root] output.bucket_name (expand)"
+		"[root] root" -> "[root] output.cloudfront_url (expand)"
+		"[root] root" -> "[root] output.s3_website_endpoint (expand)"
+		"[root] root" -> "[root] provider[\"local.providers/local/terratowns\"] (close)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/time\"] (close)"
+		"[root] root" -> "[root] provider[\"terraform.io/builtin/terraform\"] (close)"
+		"[root] terratowns_home.german_town (expand)" -> "[root] module.home_germany_hosting.output.domain_name (expand)"
+		"[root] terratowns_home.german_town (expand)" -> "[root] provider[\"local.providers/local/terratowns\"]"
+		"[root] terratowns_home.german_town (expand)" -> "[root] var.germany"
+		"[root] terratowns_home.home_payday (expand)" -> "[root] module.home_payday_hosting.output.domain_name (expand)"
+		"[root] terratowns_home.home_payday (expand)" -> "[root] provider[\"local.providers/local/terratowns\"]"
+		"[root] terratowns_home.home_payday (expand)" -> "[root] var.payday"
+		"[root] time_sleep.wait_30_seconds (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/time\"]"
+	}
+}
+

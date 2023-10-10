@@ -37,7 +37,7 @@ and progressive countries on Earth, where you can enjoy a high standard of livin
 DESCRIPTION
   domain_name = module.home_germany_hosting.domain_name
   #domain_name = "3fdq3gz.cloudfront.net"
-  town            = "missingo"
+  town            = "the-nomad-pad"
   content_version = var.germany.content_version
 }
 

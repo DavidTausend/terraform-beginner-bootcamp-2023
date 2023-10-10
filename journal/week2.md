@@ -61,3 +61,27 @@ Terraform Provider resources utilize CRUD.
 CRUD stands for Create, Read Update, and Delete
 
 https://en.wikipedia.org/wiki/Create,_read,_update_and_delete
+
+
+## Terraform graph
+
+The terraform graph command is used to generate a visual representation of either a configuration or execution plan
+The output of terraform graph is in the DOT format, which can easily be converted to an image.
+
+```tf
+terraform graph > graph.dot
+``````
+
+[Terraform graph](https://developer.hashicorp.com/terraform/cli/commands/graph)
+[dot converter](https://dreampuf.github.io/GraphvizOnline/)
+
+## Terraform Plan to a File
+
+The generated terraform plan can be saved to a specific path.
+This plan can then be used with terraform apply to be certain that only the changes shown in this plan are applied.
+
+```tf
+terraform plan -out=path
+``````
+
+[Terraform plan file](https://developer.hashicorp.com/terraform/tutorials/cli/plan)
