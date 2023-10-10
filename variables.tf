@@ -12,14 +12,14 @@ variable "terratowns_endpoint" {
 
 variable "germany" {
   type = object({
-    public_path = string
+    public_path     = string
     content_version = number
   })
 }
 
 variable "payday" {
   type = object({
-    public_path = string
+    public_path     = string
     content_version = number
   })
 }
